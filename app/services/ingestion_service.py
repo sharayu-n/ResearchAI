@@ -37,13 +37,7 @@ class IngestionService:
 
         return chunks
 
-        while start < text_length:
-            end = start + chunk_size
-            chunk = text[start:end]
-            chunks.append(chunk)
-            start += chunk_size - overlap
 
-        return chunks
 
     def build_and_save_index(self, chunks):
         embeddings = self.model.encode(chunks)
